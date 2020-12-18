@@ -19,4 +19,8 @@ from django.urls import include, path
 urlpatterns = [
     path('kakaoMapAPI/', include('kakaoMapAPI.urls')),
     path('admin/', admin.site.urls),
+    path("",
+         TemplateView.as_view(template_name="application.html"),
+         name="app",
+    ),
 ]
