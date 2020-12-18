@@ -25,7 +25,7 @@ SECRET_KEY = '86^@ej#9cad_*x6xexxzq4d97vr%guq-8dxc8i!#uzb%44r%mp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -124,3 +124,5 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
+
+KAKAOMAP_API_KEY = os.environ.get('KAKAOMAP_API_KEY')
