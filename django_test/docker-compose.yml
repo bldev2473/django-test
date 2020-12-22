@@ -1,12 +1,26 @@
 version: "3.9"
 
 services:
-  db:
-    image: postgres
-    environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+#  db:
+#    image: postgres
+#    environment:
+#      - POSTGRES_DB=postgres
+#      - POSTGRES_USER=postgres
+#      - POSTGRES_PASSWORD=postgres
+  frontend:
+    image: node
+    volumes_from:
+      - web
+    working_dir: /code/frontend
+    command: >
+      sh -c "npm install -g @vue/cli &&
+            npm install &&
+            npm install --save-dev webpack-bundle-tracker@0.4.3 &&
+            npm run serve"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - web
   web:
     env_file: envfile
     build: .
@@ -15,5 +29,6 @@ services:
       - .:/code
     ports:
       - "8000:8000"
-    depends_on:
-      - db
+#    depends_on:
+#      - db
+
