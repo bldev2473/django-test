@@ -12,11 +12,7 @@ services:
     volumes_from:
       - web
     working_dir: /code/frontend
-    command: >
-      sh -c "npm install -g @vue/cli &&
-            npm install &&
-            npm install --save-dev webpack-bundle-tracker@0.4.3 &&
-            npm run serve"
+    command: sh -c "npm run serve"
     ports:
       - "8080:8080"
     depends_on:

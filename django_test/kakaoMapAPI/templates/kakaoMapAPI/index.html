@@ -1,16 +1,24 @@
+{% load render_bundle from webpack_loader %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey={{ KAKAOMAP_API_KEY }}"></script>
 </head>
 {% load static %}
     <body>
         <div id="app">
-            ${ message }
+            <app></app>
         </div>
+        {% render_bundle 'app' %}
+        <div id="app2">
+            <app2></app2>
+        </div>
+        {% render_bundle 'app2' %}
+<!--        <div id="app">-->
+<!--            ${ message }-->
+<!--        </div>-->
         <div id="map" style="width:500px;height:400px;"></div>
         <script src="{% static 'kakaoMapAPI/index.js' %}"></script>
     </body>
