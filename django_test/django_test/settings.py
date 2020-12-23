@@ -135,4 +135,4 @@ WEBPACK_LOADER = {
     }
 }
 
-KAKAOMAP_API_KEY = os.environ.get('KAKAOMAP_API_KEY')
+# KAKAOMAP_API_KEY = os.environ.get('KAKAOMAP_API_KEY')
