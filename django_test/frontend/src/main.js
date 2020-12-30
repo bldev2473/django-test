@@ -5,6 +5,10 @@ import vuetify from './plugins/vuetify';
 
 Vue.config.productionTip = false
 
+Vue.component('global-component', {
+  template: '<div>Global Component</div>'
+});
+
 new Vue({
   vuetify,
   render: h => h(App)
