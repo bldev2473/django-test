@@ -6,7 +6,7 @@ import vuetify from './plugins/vuetify';
 Vue.config.productionTip = false
 
 Vue.component('global-component', {
-  template: '<div>Global Component</div>'
+  render: h => h('div', 'Global Component')
 });
 
 new Vue({
