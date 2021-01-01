@@ -17,6 +17,7 @@
             </v-container>
         </v-main>
         <v-main>
+            <button v-on:click="showLog">Show Log</button>
             <KakaoMap/>
         </v-main>
 
@@ -29,15 +30,24 @@
 <script>
 import KakaoMap from './components/KakaoMap';
 
+import { eventBus } from './main';
+
 export default {
-  name: 'App',
+    name: 'App',
 
-  components: {
-    KakaoMap
-  },
+    components: {
+        KakaoMap
+    },
 
-  data: () => ({
-    //
-  }),
-};
+    data: () => ({
+
+    }),
+
+    methods: {
+        showLog() {
+        var message = 'Message From App.vue'
+            eventBus.$emit('triggerEventBus', message);
+        }
+    }
+}
 </script>
