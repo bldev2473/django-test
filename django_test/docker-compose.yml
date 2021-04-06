@@ -12,13 +12,13 @@ services:
     volumes_from:
       - web
     working_dir: /code/frontend
-    command: sh -c "npm install && npm run serve"
+    command: sh -c "npm install && npm install -g @vue/cli && npm run serve"
     ports:
       - "8080:8080"
     depends_on:
       - web
   web:
-    env_file: envfile
+#    env_file: envfile
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:

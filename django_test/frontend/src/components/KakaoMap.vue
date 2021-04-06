@@ -5,7 +5,15 @@
     </v-app>
 </template>
 <script>
+import { eventBus } from '../main';
+
 export default {
+    created() {
+        eventBus.$on('triggerEventBus', function(value) {
+            console.log(value);
+        })
+    },
+
     mounted() {
         if (window.kakao && window.kakao.maps) {
             this.initMap();
