@@ -10,7 +10,6 @@
 
         <!-- Sizes your content based upon application components -->
         <v-main>
-
             <!-- Provides the application the proper gutter -->
             <v-container fluid>
 
@@ -20,20 +19,20 @@
             <KakaoMap/>
         </v-main>
 
-        <v-footer app>
-        <!-- -->
-        </v-footer>
+        <BottomNav></BottomNav>
     </v-app>
 </template>
 
 <script>
 import KakaoMap from './components/KakaoMap';
+import BottomNav from './components/BottomNav.vue';
 
 export default {
   name: 'App',
 
   components: {
-    KakaoMap
+    KakaoMap,
+    BottomNav
   },
 
   data: () => ({
