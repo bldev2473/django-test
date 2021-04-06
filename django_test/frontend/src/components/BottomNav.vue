@@ -1,35 +1,27 @@
 <template>
+  <v-bottom-navigation v-model="value">
+    <v-btn value="recent">
+      <span>Recent</span>
 
-  <v-bottom-navigation
-    app
-    fixed
-    grow
-    v-model="activeItem"
-    color="primary"
-  >
-    <v-btn value="top" :to="{ path: '/'}">
-      <span>Top Stories</span>
-      <v-icon>thumb_up</v-icon>
+      <v-icon>mdi-history</v-icon>
     </v-btn>
 
-    <v-btn value="code" :to="{ name: 'code-examples'}">
-      <span>Code Examples</span>
-      <v-icon>code</v-icon>
-    </v-btn>
-
-    <v-btn value="favorites" :to="{ name: 'my-favorites'}">
+    <v-btn value="favorites">
       <span>Favorites</span>
-      <v-icon>favorite</v-icon>
+
+      <v-icon>mdi-heart</v-icon>
+    </v-btn>
+
+    <v-btn value="nearby">
+      <span>Nearby</span>
+
+      <v-icon>mdi-map-marker</v-icon>
     </v-btn>
   </v-bottom-navigation>
-
 </template>
 
-<script lang="ts">
-  import { Component, Vue } from 'vue-property-decorator';
-
-  @Component
-  export default class BottomNav extends Vue {
-    activeItem: string = 'top';
+<script>
+  export default {
+    data: () => ({ value: 'recent' }),
   }
 </script>
